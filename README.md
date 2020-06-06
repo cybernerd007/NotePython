@@ -1,5 +1,5 @@
 # NotePython
-NotePython e um editor de texto avançado desenvolvido em Python e wx **(EM DESENVOLVIMENTO)**
+NotePython e o editor de texto avançado desenvolvido em Python e wx **(EM DESENVOLVIMENTO)**
 
 ![NotePython](https://i.imgur.com/THksgjB.png)
 
