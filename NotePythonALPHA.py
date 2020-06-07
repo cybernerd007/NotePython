@@ -79,7 +79,7 @@ class MainWindow(wx.Frame):
         self.Bind(wx.EVT_MENU, self.OnAbout, menuAbout)
         
         self.control.Bind(wx.EVT_KEY_UP, self.UpdateLineCol)
-        #self.control.Bind(wx.EVT_CHAR, self.OnCharEvent)
+        self.control.Bind(wx.EVT_CHAR, self.OnCharEvent)
         
         self.Show()
 
@@ -185,25 +185,22 @@ class MainWindow(wx.Frame):
         stat = "Linha %s, Coluna %s" % (line, col)
         self.StatusBar.SetStatusText(stat, 0)
     
-    #def OnCharEvent(self, e):
-        #keycode = e.GetKeyCode()
-        #altDown = e.AltDown()
-        #if (keycode == 14): # Ctrl + N
-            #self.OnNew(self)
-        #elif (keycode == 15): # Ctrl + O
-            #self.OnOpen(self)
-        #elif (keycode == 19): # Ctrl + S
-            #self.Save(self)
-        #elif (AltDown and (keycode == 115)): # Alt + S
-            #self.OnSaveAs(self)
-        #elif (keycode == 23): # Ctrl + W
-            #self.OnClose(self)
-        #elif (keycode == 340): # F1
-            #self.OnHowTo(self)
-        #elif (keycode == 341): # F2
-            #self.OnAbout(self)
-        #else:
-            #e.Skip()
+    def OnCharEvent(self, e):
+        self.keycode = e.GetKeyCode()
+        if (self.keycode == 14): # Ctrl + N
+            self.OnNew(self)
+        elif (self.keycode == 15): # Ctrl + O
+            self.OnOpen(self)
+        elif (self.keycode == 19): # Ctrl + S
+            self.OnSave(self)
+        elif (self.keycode == 23): # Ctrl + W
+            self.OnClose(self)
+        elif (self.keycode == 340): # F1
+            self.OnHowTo(self)
+        elif (self.keycode == 341): # F2
+            self.OnAbout(self)
+        else:
+            e.Skip()
     
 app = wx.App()
 frame = MainWindow(None, "NotePython")
