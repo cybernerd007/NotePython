@@ -15,12 +15,11 @@ para instalar o wx no Windows basta rodar esse comando no CMD(prompt de comando)
 pip install -U wxPython
 ```
 
-### Teclas de atalhos (FUNÇÃO REMOVIDA)
+### Teclas de atalhos
 ```
 Ctrl + N  ~Novo Arquivo
 Ctrl + O  ~Abre Arquivo
 Ctrl + S  ~Salva
-Ctrl + W  ~Fecha o Programa
 F1        ~Abre o Como...
 F2        ~Abre o Sobre
 ```
